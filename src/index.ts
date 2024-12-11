@@ -47,7 +47,7 @@ class TileBounds {
         this.maxzoom = maxzoom || 24;
     }
 
-    validateBounds(bounds: mapboxgl.LngLatBoundsLike): mapboxgl.LngLatBoundsLike {
+    validateBounds(bounds: mapboxgl.LngLatBoundsLike): [number, number, number, number] {
         // make sure the bounds property contains valid longitude and latitudes
         if (!Array.isArray(bounds) || bounds.length !== 4)
             return [-180, -90, 180, 90];
